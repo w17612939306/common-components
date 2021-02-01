@@ -32,15 +32,18 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', 'scss', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      '@components': resolve('src/components'),
+      '@globalcomponents': resolve('src/globalcomponents'),
+      '@views': resolve('src/views'),
     }
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
+      ...(config.dev.useEslint ? [] : []),//createLintingRule()
       {
         test: /\.vue$/,
         loader: 'vue-loader',
