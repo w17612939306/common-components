@@ -50,6 +50,10 @@
       <div class="card-box">
         <parent-componnents></parent-componnents>
       </div>
+
+      <div class="card-box">
+        <button class="btn" style="width:100px;height:50px">cl</button>
+      </div>
     </div>
   </div>
 </template>
@@ -85,6 +89,17 @@ export default {
   mounted(){
     this.loadingData = true;
     this.getData();
+    const vnode = {
+      type: 'button',
+      props: {
+        'class': 'btn',
+        style: {
+          width: '100px',
+          height: '50px'
+        }
+      },
+      children: 'click me'
+    }
   },
   methods:{
     // 打开弹框  组件可全局使用
