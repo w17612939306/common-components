@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Bread from '@views/table/Index'
+import Bread from '@views/home/Index'
 
 Vue.use(Router)
 
