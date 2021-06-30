@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div>JERRY:{{num}}</div>
+  <div class="jerry-part">
+    <div class="title">JERRY:{{num}}</div>
     <div>
-      <button @click='handle'>点击</button>
+      <button @click='handle'>点击给TOM加油</button>
     </div>
   </div>
 </template>
@@ -32,6 +32,10 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  .jerry-part{
+    .title{
+      margin-bottom: 10px;
+    }
+  }
 </style>

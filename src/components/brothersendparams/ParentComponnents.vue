@@ -1,13 +1,16 @@
 <template>
-  <div id="app">
-    <!--兄弟组件之间数据传递-->
-    <div>兄弟组件之间数据传递-父组件</div>
-    <div>
-      <button @click='handle'>销毁事件</button>
+  <div class="father-box">
+    <!--兄弟组件之间数据传递 -父组件-->
+    <div class="father-part">
+      <button @click='handle'>销毁加油事件</button>
     </div>
 
-    <acomponents :hub="hub"></acomponents>
-    <bcomponents :hub="hub"></bcomponents>
+    <div class="son-part">
+      <acomponents :hub="hub"></acomponents>
+      <span></span>
+      <bcomponents :hub="hub"></bcomponents>
+    </div>
+
   </div>
 </template>
 
@@ -24,7 +27,7 @@
       }
     },
     mounted(){
-      console.log(this.hub)
+      // console.log(this.hub)
     },
     methods: {
       handle: function(){
@@ -36,6 +39,24 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .father-box{
+      .father-part{
+        padding: 15px;
+        height: 20px;
+        text-align: center;
+        background: #ca9696;
+      }
+      .son-part{
+        padding: 15px;
+        background: #a8d4ca;
+        display: flex;
+        justify-content: space-around;
+        span{
+          display: inline-block;
+          height: 50px;
+          border-left: 2px solid black;
+        }
+      }
+    }
 </style>

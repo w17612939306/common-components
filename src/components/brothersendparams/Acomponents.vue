@@ -1,8 +1,8 @@
 <template>
-    <div>
-      <div>TOM:{{num}}</div>
+    <div class="tom-part">
+      <div class="title">TOM:{{num}}</div>
       <div>
-        <button @click='handle'>点击</button>
+        <button @click='handle'>点击给JERRY加油</button>
       </div>
     </div>
 </template>
@@ -17,7 +17,7 @@
     },
     props:['hub'],
     mounted(){
-      console.log(this.hub)
+      // console.log(this.hub)
       // 3、接收数据方，通过mounted(){} 钩子中  触发hub.$on()方法名
       this.hub.$on('acomponents', (val) => {
         this.num += val;
@@ -32,6 +32,10 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .tom-part{
+      .title{
+        margin-bottom: 10px;
+      }
+    }
 </style>
