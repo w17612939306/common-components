@@ -1,6 +1,8 @@
 <template>
   <div class="page-demo">
     <div class="page-content">
+      <Hellow></Hellow>
+      <World></World>
       <div class="card-box">
         <span>富文本编辑器：</span>
         <froala-editor></froala-editor>
@@ -98,8 +100,8 @@
 </template>
 
 <script>
-import { aData, aMethond, Person, B } from '@components/c';
-import { A, dMethod, dPerson } from '@components/d';
+import { aData, aMethond, Person, B } from '@components/Modules_es6/c';
+import { A, dMethod, dPerson } from '@components/Modules_es6/d';
 import Breadcrumb from '@components/breadcrumb/Breadcrumb'
 import Loading from '@globalcomponents/loading/Loading'
 import UseNewSlot from '@components/breadcrumb/UseNewSlot'
@@ -107,9 +109,11 @@ import AreaSlot from '@components/breadcrumb/AreaSlot'
 import ParentComponnents from '@components/brothersendparams/ParentComponnents'
 import DialogBox from '@components/dialog/DialogBox'
 import FroalaEditor from '@components/froalaEditor/FroalaEditor'
+import Hellow from "../../components/Hellow";
+import World from "../../components/World";
 export default {
   name: 'Index',
-  components: {FroalaEditor, DialogBox, ParentComponnents, AreaSlot, UseNewSlot, Loading, Breadcrumb },
+  components: {World, Hellow, FroalaEditor, DialogBox, ParentComponnents, AreaSlot, UseNewSlot, Loading, Breadcrumb },
   data(){
     return{
       aData:'',
