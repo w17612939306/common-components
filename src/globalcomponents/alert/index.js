@@ -1,13 +1,13 @@
-import Vue from "vue";
-import Alert from "./Alert";
+import Vue from 'vue'
+import Alert from './Alert'
 
-const alertBox = Vue.extend(Alert);
+const alertBox = Vue.extend(Alert)
 
-alertBox.install =(options)=>{
-  console.log('$alert  方法被调用');  // 全局任何地方调用都执行 逻辑...
+alertBox.install = (options) => {
+  console.log('$alert  方法被调用') // 全局任何地方调用都执行 逻辑...
 
   if (!options) {
-    return null;
+    return null
   }
 
   if (options === undefined || options === null) {
@@ -33,10 +33,9 @@ alertBox.install =(options)=>{
     instance.visible = true
   })
 
-  console.log('$alert  方法调用完成');
+  console.log('$alert  方法调用完成')
   alertBox.instance = instance
-  return instance;
-
+  return instance
 }
 
-export default alertBox;
+export default alertBox
