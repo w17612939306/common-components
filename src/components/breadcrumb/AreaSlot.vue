@@ -7,27 +7,27 @@
 </template>
 
 <script>
-  export default {
-    name: 'AreaSlot',
-    data(){
-      return{
-        firstName: '欧阳',
-        lastName: '骆玲',
-      }
-    },
-    mounted(){
-      this.lastName = '夏邦';
-    },
-    methods:{
-      changeLastName(){
-        if(this.lastName != '葫芦娃'){
-          this.lastName = '葫芦娃';
-        }else{
-          this.lastName = '白骨精';
-        }
+export default {
+  name: 'AreaSlot',
+  data () {
+    return {
+      firstName: '欧阳',
+      lastName: '骆玲'
+    }
+  },
+  mounted () {
+    this.lastName = '夏邦'
+  },
+  methods: {
+    changeLastName () {
+      if (this.lastName != '葫芦娃') {
+        this.lastName = '葫芦娃'
+      } else {
+        this.lastName = '白骨精'
       }
     }
   }
+}
 </script>
 
 <style scoped>

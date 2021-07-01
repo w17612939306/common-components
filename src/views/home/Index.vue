@@ -100,8 +100,8 @@
 </template>
 
 <script>
-import { aData, aMethond, Person, B } from '@components/Modules_es6/c';
-import { A, dMethod, dPerson } from '@components/Modules_es6/d';
+import { aData, aMethond, Person, B } from '@components/Modules_es6/c'
+import { A, dMethod, dPerson } from '@components/Modules_es6/d'
 import Breadcrumb from '@components/breadcrumb/Breadcrumb'
 import Loading from '@globalcomponents/loading/Loading'
 import UseNewSlot from '@components/breadcrumb/UseNewSlot'
@@ -109,18 +109,18 @@ import AreaSlot from '@components/breadcrumb/AreaSlot'
 import ParentComponnents from '@components/brothersendparams/ParentComponnents'
 import DialogBox from '@components/dialog/DialogBox'
 import FroalaEditor from '@components/froalaEditor/FroalaEditor'
-import Hellow from "../../components/Hellow";
-import World from "../../components/World";
+import Hellow from '../../components/Hellow'
+import World from '../../components/World'
 export default {
   name: 'Index',
   components: {World, Hellow, FroalaEditor, DialogBox, ParentComponnents, AreaSlot, UseNewSlot, Loading, Breadcrumb },
-  data(){
-    return{
-      aData:'',
-      bData:'',
+  data () {
+    return {
+      aData: '',
+      bData: '',
       active: true,
-      breadData:{
-        breads:[
+      breadData: {
+        breads: [
           {
             title: '列表页',
             path: ''
@@ -130,16 +130,16 @@ export default {
             path: '/hello-world'
           }
         ],
-        title: '详情页31',
+        title: '详情页31'
       },
       loadingData: false,
       showDialogs: false,
       dialogData: '',
-      opeBtns:[
+      opeBtns: [
         {
           label: '取消',
-          event:()=>{
-            return this.showDialogs = false;
+          event: () => {
+            return this.showDialogs = false
           }
         },
         {
@@ -149,11 +149,11 @@ export default {
       ]
     }
   },
-  mounted(){
-    console.log(A);// 6
-    this.aData = A?A:'';
-    this.loadingData = true;
-    this.getData();
+  mounted () {
+    console.log(A)// 6
+    this.aData = A || ''
+    this.loadingData = true
+    this.getData()
     const vnode = {
       type: 'button',
       props: {
@@ -166,51 +166,50 @@ export default {
       children: 'click me'
     }
   },
-  methods:{
+  methods: {
     // 打开弹框  组件可全局使用
-    showAlert(){
+    showAlert () {
       const MyMessageBox = this.$my_alert({
-        type: "warning",
+        type: 'warning',
         content: `确定要启用当前状态吗？`,
         opeBtn: [
           {
-            text: "取消",
+            text: '取消',
             fn: () => {
-              MyMessageBox.visible = false;
+              MyMessageBox.visible = false
             }
           },
           {
-            type: "primary",
-            text: "确认",
+            type: 'primary',
+            text: '确认',
             fn: () => {
-              MyMessageBox.visible = false;
-              this.$message.success("启用成功");
+              MyMessageBox.visible = false
+              this.$message.success('启用成功')
             }
           }
         ]
-      });
+      })
     },
 
-    getData(){
-      let data = ['A','B'];
-      if(data){
-        setTimeout(()=>{
+    getData () {
+      let data = ['A', 'B']
+      if (data) {
+        setTimeout(() => {
           // 获取到数据后关闭 未获取到数据 一直loading
-          this.loadingData = false;
-        },2000);
+          this.loadingData = false
+        }, 2000)
       }
     },
 
-    openDialog(){
-      this.showDialogs = true;
+    openDialog () {
+      this.showDialogs = true
     },
-    closeDialog(val){
-      console.log(val);
-      this.showDialogs = false;
-      if(val && val == 'primary'){
+    closeDialog (val) {
+      console.log(val)
+      this.showDialogs = false
+      if (val && val == 'primary') {
         // todo  调用接口 成功后关闭
       }
-
     }
   }
 }

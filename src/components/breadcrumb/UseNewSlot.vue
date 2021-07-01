@@ -6,9 +6,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'UseNewSlot'
-  }
+export default {
+  name: 'UseNewSlot'
+}
 </script>
 
 <style scoped>

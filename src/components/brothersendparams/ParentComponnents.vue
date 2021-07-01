@@ -6,7 +6,7 @@
     </div>
 
     <div class="son-part">
-      <acomponents :hub="hub"></acomponents>
+      <acomponents :hub="hub" v-bind.sync="'WWWWWW'"></acomponents>
       <span></span>
       <bcomponents :hub="hub"></bcomponents>
     </div>
@@ -15,28 +15,28 @@
 </template>
 
 <script>
-  import Acomponents from './Acomponents'
-  import Bcomponents from './Bcomponents'
-  import Vue from 'vue'
-  export default {
-    name: 'ParentComponnents',
-    components: {Bcomponents, Acomponents},
-    data(){
-      return{
-        hub: new Vue()  //1、 提供事件中心
-      }
-    },
-    mounted(){
-      // console.log(this.hub)
-    },
-    methods: {
-      handle: function(){
-        //4、销毁事件 通过hub.$off()方法名销毁之后无法进行传递数据
-        this.hub.$off('acomponents');
-        this.hub.$off('bcomponents');
-      }
+import Acomponents from './Acomponents'
+import Bcomponents from './Bcomponents'
+import Vue from 'vue'
+export default {
+  name: 'ParentComponnents',
+  components: {Bcomponents, Acomponents},
+  data () {
+    return {
+      hub: new Vue() // 1、 提供事件中心
+    }
+  },
+  mounted () {
+    // console.log(this.hub)
+  },
+  methods: {
+    handle: function () {
+      // 4、销毁事件 通过hub.$off()方法名销毁之后无法进行传递数据
+      this.hub.$off('acomponents')
+      this.hub.$off('bcomponents')
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

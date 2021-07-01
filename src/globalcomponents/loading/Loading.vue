@@ -9,29 +9,29 @@
 </template>
 
 <script>
-  export default {
-    name: 'Loading',
-    props:['pageLoading'],
-    data(){
-      return{
-        fileName: '',
-        exportId: '',
-        loading: false
-      }
-    },
-    watch:{
-      pageLoading(newVal, oldVal){
-        // console.log(newVal);
-        this.loading = newVal;
-      }
-    },
-    mounted(){
-      // console.log(this.pageLoading);
-      if(this.pageLoading){
-        this.loading = this.pageLoading;
-      }
+export default {
+  name: 'Loading',
+  props: ['pageLoading'],
+  data () {
+    return {
+      fileName: '',
+      exportId: '',
+      loading: false
+    }
+  },
+  watch: {
+    pageLoading (newVal, oldVal) {
+      // console.log(newVal);
+      this.loading = newVal
+    }
+  },
+  mounted () {
+    // console.log(this.pageLoading);
+    if (this.pageLoading) {
+      this.loading = this.pageLoading
     }
   }
+}
 </script>
 
 <style lang="scss">

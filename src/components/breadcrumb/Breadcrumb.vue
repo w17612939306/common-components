@@ -23,16 +23,16 @@ export default {
     },
     title: {
       type: String,
-      default: ()=> ''
+      default: () => ''
     }
   },
-  created(){
+  created () {
     // console.log(this.bread)
   },
-  methods:{
-    linkPage(val){
-      if (val.path){
-        this.$router.push({path: val.path, query: val.query});
+  methods: {
+    linkPage (val) {
+      if (val.path) {
+        this.$router.push({path: val.path, query: val.query})
       }
     }
   }

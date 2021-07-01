@@ -30,54 +30,54 @@
 </template>
 
 <script>
-  export default {
-    name: 'Alert', // 组件的名字
-    data() {
-      return {
-        visible: false,
-        showClose: true, // 是否显示右上角关闭按钮
-        hideIcon: false,// 是否隐藏前面的ICON
-        title: '提示', // 弹框标题
-        content: '组件内容', // 一级内容内容
-        subContent: "", // 二级内容
-        closeCallBakFn: null,  // 点击弹框关闭按钮，如果有该方法则回调该方法
-        opeBtn: [
-          {
-            type: "", // 按钮样式
-            text: "", // 按钮文本
-            loading: false,
-            fn: () => {
-              // 点击事件处理
-            }
+export default {
+  name: 'Alert', // 组件的名字
+  data () {
+    return {
+      visible: false,
+      showClose: true, // 是否显示右上角关闭按钮
+      hideIcon: false, // 是否隐藏前面的ICON
+      title: '提示', // 弹框标题
+      content: '组件内容', // 一级内容内容
+      subContent: '', // 二级内容
+      closeCallBakFn: null, // 点击弹框关闭按钮，如果有该方法则回调该方法
+      opeBtn: [
+        {
+          type: '', // 按钮样式
+          text: '', // 按钮文本
+          loading: false,
+          fn: () => {
+            // 点击事件处理
           }
-        ],
-        // type:'info',//'success','warning','error'
-      };
-    },
-    mounted(){
-     // this.close();
-    },
-    methods: {
-      calcWidth(){
-        if (this.width) {
-          return {
-            width: this.width
-          };
-        } else {
-          return null;
         }
-      },
-      setIconClass() {
-        return `icon-tip-${this.type}`;
-      },
-      closeMe() {  //点击关闭 向外暴露2个事件
-        this.visible = false
-        if(this.closeCallBakFn && typeof this.closeCallBakFn === 'function'){
-          this.closeCallBakFn();
+      ]
+      // type:'info',//'success','warning','error'
+    }
+  },
+  mounted () {
+    // this.close();
+  },
+  methods: {
+    calcWidth () {
+      if (this.width) {
+        return {
+          width: this.width
         }
+      } else {
+        return null
+      }
+    },
+    setIconClass () {
+      return `icon-tip-${this.type}`
+    },
+    closeMe () { // 点击关闭 向外暴露2个事件
+      this.visible = false
+      if (this.closeCallBakFn && typeof this.closeCallBakFn === 'function') {
+        this.closeCallBakFn()
       }
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
