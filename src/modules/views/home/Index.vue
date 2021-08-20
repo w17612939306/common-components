@@ -102,15 +102,15 @@
 <script>
 import { aData, aMethond, Person, B } from '@components/Modules_es6/c'
 import { A, dMethod, dPerson } from '@components/Modules_es6/d'
-import Breadcrumb from '@components/breadcrumb/Breadcrumb'
+import Breadcrumb from '@components/BreadCrumb/Breadcrumb'
 import Loading from '@globalcomponents/loading/Loading'
-import UseNewSlot from '@components/breadcrumb/UseNewSlot'
-import AreaSlot from '@components/breadcrumb/AreaSlot'
-import ParentComponnents from '@components/brothersendparams/ParentComponnents'
-import DialogBox from '@components/dialog/DialogBox'
-import FroalaEditor from '@components/froalaEditor/FroalaEditor'
-import Hellow from '../../components/Hellow'
-import World from '../../components/World'
+import UseNewSlot from '@components/BreadCrumb/UseNewSlot'
+import AreaSlot from '@components/BreadCrumb/AreaSlot'
+import ParentComponnents from '@components/BrotherSendParams/ParentComponnents'
+import DialogBox from '@components/Dialog/DialogBox'
+import FroalaEditor from '@components/FroalaEditor/FroalaEditor'
+import Hellow from '../../../components/Hellow'
+import World from '../../../components/World'
 export default {
   name: 'Index',
   components: {World, Hellow, FroalaEditor, DialogBox, ParentComponnents, AreaSlot, UseNewSlot, Loading, Breadcrumb },
