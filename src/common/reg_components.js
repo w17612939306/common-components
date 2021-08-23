@@ -1,6 +1,6 @@
-import Hello from './Hellow'
-import World from './World'
-import BreadCrumb from '@components/breadcrumb/Breadcrumb'
+import Hello from '../components/Hellow'
+import World from '../components/World'
+import BreadCrumb from '@components/BreadCrumb/Breadcrumb'
 
 export default {
   install (Vue) {

@@ -4,9 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import '@/assets/css/global-cover.scss'
-import Element from 'element-ui'
+import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import installObj from '@components/reg_components'
+import installObj from '@/common/reg_components'
 // import '@/assets/iconfont/iconfont.css'
 
 // Import Froala Editor
@@ -30,7 +30,7 @@ import alertBox from '@globalcomponents/alert/index'
 Vue.use(VueFroala)
 Vue.config.productionTip = false
 Vue.use(loading)
-Vue.use(Element)
+Vue.use(ElementUI)
 Vue.use(installObj)
 Vue.prototype.$my_alert = alertBox.install
 
