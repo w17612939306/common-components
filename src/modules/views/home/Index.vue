@@ -1,85 +1,90 @@
 <template>
-  <div class="page-demo">
-    <div class="page-content">
-      <Hellow></Hellow>
-      <World></World>
-      <div class="card-box">
-        <span>富文本编辑器：</span>
-        <froala-editor></froala-editor>
-      </div>
+  <div class="component-page-box">
+    <top-bar></top-bar>
+    <div class="body-content" style="width: 100%;display: flex;">
+      <side-bar></side-bar>
 
-      <!--面包屑 start-->
-      <div class="card-box">
-        <span>面包屑：</span>
-        <breadcrumb :breads="breadData.breads" :title="breadData.title">
-        </breadcrumb>
-      </div>
-      <!--面包屑 end-->
+      <div class="page-content" >
+        <!--<Hellow></Hellow>-->
+        <!--<World></World>-->
 
-      <!--左侧菜单待补充  start-->
-      <div class="card-box">
-        <span>菜单待补充:</span>
-        <p>菜单待补充.................</p>
-      </div>
-      <!--左侧菜单待补充  end-->
+        <div class="card-box">
+          <span>富文本编辑器：</span>
+          <!--<froala-editor ref="edit"></froala-editor>-->
+        </div>
 
-      <!--loading 组件 start-->
-      <div class="card-box">
-        <span>loading 组件：</span>
-        <loading  :pageLoading="loadingData">测试Loading组件</loading>
-      </div>
-      <!--loading 组件 end-->
+        <!--面包屑 start-->
+        <div class="card-box">
+          <span>面包屑：</span>
+          <breadcrumb :breads="breadData.breads" :title="breadData.title">
+          </breadcrumb>
+        </div>
+        <!--面包屑 end-->
 
-      <!--alert组件  start-->
-      <div class="card-box">
-        <span>按钮 + alert组件：</span>
-        <el-button @click="showAlert">打开alert</el-button>
-      </div>
-      <!--alert组件  end-->
+        <!--左侧菜单待补充  start-->
+        <div class="card-box">
+          <span>菜单待补充:</span>
+          <p>菜单待补充.................</p>
+        </div>
+        <!--左侧菜单待补充  end-->
 
-      <!--具名插槽 start -->
-      <div class="card-box">
-        <!--老版本使用具名插槽-->
-        <span>具名插槽(老)：</span>
-        <use-new-slot>
-          <p slot="header">具名插槽-我是组件头部</p>
-        </use-new-slot>
-        <hr>
-        <!--新版本使用具名插槽-->
-        <use-new-slot>
-          <span>具名插槽(新)：</span>
-          <template v-slot:header>
-            <p>我也是组件头部</p>
-          </template>
-          <!--将 v-slot: 替换成 # 号-->
-          <template #header>
-            <p>我也是组件头部</p>
-          </template>
-        </use-new-slot>
-      </div >
-      <!--具名插槽 end -->
+        <!--loading 组件 start-->
+        <div class="card-box">
+          <span>loading 组件：</span>
+          <loading  :pageLoading="loadingData">测试Loading组件</loading>
+        </div>
+        <!--loading 组件 end-->
 
-      <!--作用域插槽 start-->
-      <div class="card-box">
-        <!--作用域插槽：就是让插槽的内容能够访问子组件中才有的数据。-->
-        <span>作用域插槽：</span>
-        <AreaSlot>
-          <p slot="header" slot-scope="WW">姓名是：{{WW.firstName}}{{WW.lastName}}</p>
-        </AreaSlot>
-      </div>
-      <!--作用域插槽 end-->
+        <!--alert组件  start-->
+        <div class="card-box">
+          <span>按钮 + alert组件：</span>
+          <el-button @click="showAlert">打开alert</el-button>
+        </div>
+        <!--alert组件  end-->
 
-      <!--兄弟组件之间数据传递 start-->
-      <div class="card-box">
-        <span>兄弟组件之间数据传递-父组件：</span>
-        <parent-componnents></parent-componnents>
-      </div>
-      <!--兄弟组件之间数据传递 end-->
+        <!--具名插槽 start -->
+        <div class="card-box">
+          <!--老版本使用具名插槽-->
+          <span>具名插槽(老)：</span>
+          <use-new-slot>
+            <p slot="header">具名插槽-我是组件头部</p>
+          </use-new-slot>
+          <hr>
+          <!--新版本使用具名插槽-->
+          <use-new-slot>
+            <span>具名插槽(新)：</span>
+            <template v-slot:header>
+              <p>我也是组件头部</p>
+            </template>
+            <!--将 v-slot: 替换成 # 号-->
+            <template #header>
+              <p>我也是组件头部</p>
+            </template>
+          </use-new-slot>
+        </div >
+        <!--具名插槽 end -->
 
-      <!--弹框组件 start-->
-      <div class="card-box">
-        <span>弹框组件：</span>
-        <el-button @click="openDialog">打开弹框</el-button>
+        <!--作用域插槽 start-->
+        <div class="card-box">
+          <!--作用域插槽：就是让插槽的内容能够访问子组件中才有的数据。-->
+          <span>作用域插槽：</span>
+          <AreaSlot>
+            <p slot="header" slot-scope="WW">姓名是：{{WW.firstName}}{{WW.lastName}}</p>
+          </AreaSlot>
+        </div>
+        <!--作用域插槽 end-->
+
+        <!--兄弟组件之间数据传递 start-->
+        <div class="card-box">
+          <span>兄弟组件之间数据传递-父组件：</span>
+          <parent-componnents></parent-componnents>
+        </div>
+        <!--兄弟组件之间数据传递 end-->
+
+        <!--弹框组件 start-->
+        <div class="card-box">
+          <span>弹框组件：</span>
+          <el-button @click="openDialog">打开弹框</el-button>
           <dialog-box
             v-if="showDialogs"
             :data="dialogData"
@@ -93,9 +98,11 @@
             </template>
           </dialog-box>
 
+        </div>
+        <!--弹框组件 end-->
       </div>
-      <!--弹框组件 end-->
     </div>
+
   </div>
 </template>
 
@@ -109,11 +116,16 @@ import AreaSlot from '@components/BreadCrumb/AreaSlot'
 import ParentComponnents from '@components/BrotherSendParams/ParentComponnents'
 import DialogBox from '@components/Dialog/DialogBox'
 import FroalaEditor from '@components/FroalaEditor/FroalaEditor'
-import Hellow from '../../../components/Hellow'
-import World from '../../../components/World'
+import Hellow from '../vuepage/Hellow'
+import World from '../vuepage/World'
+import SideBar from "../layout/SideBar";
+import TopBar from "../layout/TopBar";
 export default {
   name: 'Index',
-  components: {World, Hellow, FroalaEditor, DialogBox, ParentComponnents, AreaSlot, UseNewSlot, Loading, Breadcrumb },
+  components: {
+    TopBar,
+    SideBar,
+    World, Hellow, FroalaEditor, DialogBox, ParentComponnents, AreaSlot, UseNewSlot, Loading, Breadcrumb },
   data () {
     return {
       aData: '',
@@ -216,16 +228,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .page-demo{
-    .page-content{
-      .card-box{
-        background: #ffffff;
-        padding: 20px;
-        margin: 15px 0;
-        >span{
-          color: darkorange;
+  .component-page-box{
+    .body-content{
+      .page-content{
+        .card-box{
+          background: #ffffff;
+          padding: 20px;
+          margin: 15px 0;
+          >span{
+            color: darkorange;
+          }
         }
       }
     }
+
   }
 </style>

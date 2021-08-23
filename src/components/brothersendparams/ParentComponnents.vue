@@ -6,7 +6,7 @@
     </div>
 
     <div class="son-part">
-      <acomponents :hub="hub" v-bind.sync="'WWWWWW'"></acomponents>
+      <acomponents :hub="hub" v-bind.sync="bindData"></acomponents>
       <span></span>
       <bcomponents :hub="hub"></bcomponents>
     </div>
@@ -23,7 +23,8 @@ export default {
   components: {Bcomponents, Acomponents},
   data () {
     return {
-      hub: new Vue() // 1、 提供事件中心
+      hub: new Vue(), // 1、 提供事件中心
+      bindData: {}
     }
   },
   mounted () {
