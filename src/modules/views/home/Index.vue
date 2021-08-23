@@ -150,10 +150,10 @@ export default {
     }
   },
   mounted () {
-    console.log(A)// 6
-    this.aData = A || ''
-    this.loadingData = true
-    this.getData()
+    console.log(A);
+    this.aData = A || '';
+    this.loadingData = true;
+    this.getData();
     const vnode = {
       type: 'button',
       props: {
