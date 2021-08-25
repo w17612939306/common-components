@@ -1,7 +1,7 @@
 <template>
     <div>
-      <h2>header内容：</h2>
       <slot name="header"></slot>
+      <slot name="header2"></slot>
     </div>
 </template>
 
