@@ -36,8 +36,16 @@ Vue.prototype.$my_alert = alertBox.install
 
 Vue.config.productionTip = false
 
+
+//兄弟之前的传值
+Vue.prototype.$EventHub = Vue.prototype.$EventHub || new Vue();
+
+
 /* eslint-disable no-new */
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  data: {
+    eventHub: new Vue()
+  }
 }).$mount('#app')

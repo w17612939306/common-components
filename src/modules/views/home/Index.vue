@@ -1,5 +1,7 @@
 <template>
   <div class="component-page-box">
+    <p @click="emitEvent()">点击触发mixins</p>
+    <p @click="go()">点击触发</p>
     <top-bar></top-bar>
     <div class="body-content" style="width: 100%;display: flex;">
       <side-bar></side-bar>
@@ -14,39 +16,43 @@
 </template>
 
 <script>
-import { aData, aMethond, Person, B } from '@components/Modules_es6/c'
-import { A, dMethod, dPerson } from '@components/Modules_es6/d'
-
+import { hubEvent, pageLoading, cDemo, } from '@common/mixins';
+// import { A, dMethod, dPerson } from '@components/Modules_es6/d';
 import SideBar from "../layout/SideBar";
 import TopBar from "../layout/TopBar";
+
 export default {
   name: 'Index',
-  components: {
+  mixins: [hubEvent],
+  components:{
     TopBar,
-    SideBar },
+    SideBar
+  },
   data () {
     return {
       aData: '',
       bData: '',
       active: true,
 
-      opeBtns: [
-        {
-          label: '取消',
-          event: () => {
-            return this.showDialogs = false
-          }
-        },
-        {
-          label: '确定',
-          type: 'primary'
-        }
-      ]
+      // opeBtns: [
+      //   {
+      //     label: '取消',
+      //     event: () => {
+      //       return this.showDialogs = false
+      //     }
+      //   },
+      //   {
+      //     label: '确定',
+      //     type: 'primary'
+      //   }
+      // ]
     }
   },
   mounted () {},
   methods: {
-
+    go() {
+      this.$root.eventHub.$emit("RESET_PARAMS", "哈哈");
+    }
   }
 }
 </script>

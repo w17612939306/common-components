@@ -6,7 +6,11 @@
 
 <script>
 export default {
-  name: 'Details'
+  name: 'Details',
+  mounted(){
+  },
+  methods:{
+  }
 }
 </script>
 

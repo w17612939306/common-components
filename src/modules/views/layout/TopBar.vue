@@ -30,6 +30,11 @@
           activeIndex2: '1'
         };
       },
+      mounted(){
+        this.$root.eventHub.$on('RESET_PARAMS', (data)=>{//监听事件 $eventBus
+          console.log('接受到的参数：'+ data);
+        } )
+      },
       methods: {
         handleSelect(key, keyPath) {
           console.log(key, keyPath);
