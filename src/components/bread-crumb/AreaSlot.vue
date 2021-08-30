@@ -1,6 +1,5 @@
 <template>
     <div>
-      <h2>作用域插槽获取组件内部数据</h2>
       <slot name="header" :firstName="firstName" :lastName="lastName"></slot>
       <el-button @click="changeLastName">换个名字</el-button>
     </div>

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Bread from '@views/home/Index'
+import HelloWorld from '@/modules/pages/vuepage/HelloWorld'
 
 Vue.use(Router)
 
@@ -12,11 +11,6 @@ const router = new Router({
       path: '/hello-world',
       name: 'HelloWorld',
       component: HelloWorld
-    },
-    {
-      path: '/',
-      name: 'bread',
-      component: Bread
     }
   ]
 })
